@@ -6,6 +6,10 @@ $db = connectDB();
 
 $newItem = $_POST;
 
-addNewItem($newItem, $db);
+$errorCheck = addNewItem($newItem, $db);
 
-header('Location: index.php');
+if ($errorCheck === false) {
+    header('Location: index.php?error=wrongUser');
+} else {
+    header('Location: index.php?success=itemAdded');
+}
