@@ -94,17 +94,17 @@ function checkValidInput(array $sanitisedItem): bool
 /**
  * adds new item to shopping list database
  *
- * @param array $newItem new item being added
+ * @param array $sanitisedItem new item being added
  *
  * @param $db PDO connection to database
  *
  * @return bool $results shows if add was successful
  */
-function addNewItem($newItem, $db)
+function addNewItem($sanitisedItem, $db): bool
 {
-    $newItem = implode($newItem);
+    $newItem = implode($sanitisedItem);
     $query = $db->prepare('INSERT INTO `items` (`name`) VALUES (:name);');
-    $query->bindParam(':name', $newItem);
+    $query->bindParam(':name', $sanitisedItem);
     $results = $query->execute();
     return $results;
 }
