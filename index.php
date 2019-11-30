@@ -2,6 +2,8 @@
 
 require_once('functions.php');
 
+$db = connectDB();
+
 ?>
 
 <html lang="en-GB">
