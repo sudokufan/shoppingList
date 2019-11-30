@@ -24,6 +24,11 @@ $items = getShoppingList($db);
     <?php echo displayShoppingList($items); ?>
 </div>
 
+<form method="post" action="newItem.php">
+    <p>Add new item:</p>
+    <input type="text" name="item" placeholder="eg: Bananas" required">
+    <input type="submit">
+</form>
 
 </body>
 </html>
