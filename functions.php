@@ -40,10 +40,14 @@ function displayShoppingList(array $items): string
 {
     $result = '';
 
-    foreach ($items as $item) {
-        $result .= '<div>
+    if (array_key_exists("name", $items[0])) {
+        foreach ($items as $item) {
+            $result .= '<div>
                     <ul>' . $item['name'] . '</ul>
                     </div>';
+        }
+    } else {
+        return 'Incorrect SQL data; please contact administrator';
     }
     return $result;
 }
