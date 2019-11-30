@@ -7,6 +7,10 @@ html {
     font-weight: bold;
 }
 
+body {
+    background-image: linear-gradient(#c7faf2, #62dfff);
+}
+
 h1 {
     text-align: center;
 }
