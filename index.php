@@ -25,6 +25,12 @@ $items = getShoppingList($db);
 </div>
 
 <form method="post" action="newItem.php">
+    <?php if (isset($_GET['error'])) {
+        echo 'ERROR: please check info and try again';
+    }
+    if (isset($_GET['success'])) {
+        echo 'Item successfully added!';
+    } ?>
     <p>Add new item:</p>
     <input type="text" name="item" placeholder="eg: Bananas" required">
     <input type="submit">
