@@ -52,7 +52,13 @@ function displayShoppingList(array $items): string
     return $result;
 }
 
-
+/**
+ * sanitised new item user input
+ *
+ * @param array $newItem item input by user
+ *
+ * @return array $newItem user-entered item now sanitised for safety
+ */
 function sanitiseInput(array $newItem): array
 {
     preg_replace('/[^a-z]/i', ' ', $newItem);
