@@ -12,6 +12,10 @@ body {
     background-image: linear-gradient(#c7faf2, #62dfff);
 }
 
+ul {
+    padding-left: 0px;
+}
+
 .header {
     padding-bottom: 50px;
 }
