@@ -51,3 +51,21 @@ function displayShoppingList(array $items): string
     }
     return $result;
 }
+
+/**
+ * adds new item to shopping list database
+ *
+ * @param array $newItem new item being added
+ *
+ * @param $db PDO connection to database
+ *
+ * @return bool $results shows if add was successful
+ */
+function addNewItem($newItem, $db)
+{
+    $newItem = implode($newItem);
+    $query = $db->prepare('INSERT INTO `items` (`name`) VALUES (:name);');
+    $query->bindParam(':name', $newItem);
+    $results = $query->execute();
+    return $results;
+}
