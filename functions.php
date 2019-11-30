@@ -63,25 +63,17 @@ function displayShoppingList(array $items): string
 function checkUserInput(array $newItem)
 {
     $validItem = [];
-    if ($newItem != []) {
-            $validItem = preg_replace('/[^a-z]/i', '', $newItem);
-        return $validItem;
-    } else {
-        return false;
-    }
 
-//    $valid = "";
-//
-//    if (is_string($newItem['name']) === false) {
-//        $valid = false;
-//    } elseif (strlen($newItem['name']) > 255) {
-//        $valid = false;
-//    } elseif (strlen($newItem['name']) < 1) {
-//        $valid = false;
-//    } else {
-//        $valid = true;
-//    }
-//    return $valid;
+    if (is_string($newItem['name']) === false) {
+        $validItem = false;
+    } elseif (strlen($newItem['name']) > 255) {
+        $validItem = false;
+    } elseif (strlen($newItem['name']) < 1) {
+        $validItem = false;
+    } else {
+        $validItem = preg_replace('/[^a-z]/i', '', $newItem);
+    }
+    return $validItem;
 }
 
 
