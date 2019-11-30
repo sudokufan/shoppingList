@@ -1,6 +1,11 @@
 <?php
 
 
+/**
+ * connects PHP to SQL database
+ *
+ * @return PDO connected database as $db
+ */
 function connectDB(): PDO
 {
     $db = new PDO('mysql:host=db; dbname=shoppingList', 'root', 'password');
