@@ -32,7 +32,7 @@ $items = getShoppingList($db);
         echo 'Item successfully added!';
     } ?>
     <p>Add new item:</p>
-    <input type="text" name="item" placeholder="eg: Bananas" required">
+    <input type="text" name="name" placeholder="eg: Bananas" required">
     <input type="submit">
 </form>
 
