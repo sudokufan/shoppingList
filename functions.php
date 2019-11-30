@@ -42,7 +42,7 @@ function displayShoppingList(array $items): string
 
     foreach ($items as $item) {
         $result .= '<div>
-                    <h3>' . $item['name'] . '</h3>
+                    <ul>' . $item['name'] . '</ul>
                     </div>';
     }
     return $result;
