@@ -11,3 +11,7 @@ html {
 body {
     background-image: linear-gradient(#c7faf2, #62dfff);
 }
+
+.header {
+    padding-bottom: 50px;
+}

@@ -18,7 +18,7 @@ $items = getShoppingList($db);
 
 <body>
 <h1>Maydinner</h1>
-<h2>Let's go shopping!</h2>
+<h2 class="header">Let's go shopping!</h2>
 
 <div>
     <?php echo displayShoppingList($items); ?>
