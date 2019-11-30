@@ -7,7 +7,7 @@ class StackTest extends TestCase
 {
     public function testSuccessDisplayShoppingList() {
         $expected = '<div>
-                    <ul>name</ul>
+                    <ul>value</ul>
                     </div>';
         $input = [['name'=>'value']];
         $case = displayShoppingList($input);
