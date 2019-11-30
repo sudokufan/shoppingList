@@ -61,9 +61,11 @@ function displayShoppingList(array $items): string
  */
 function sanitiseInput(array $newItem): array
 {
-    preg_replace('/[^a-z]/i', ' ', $newItem);
-    preg_replace('/\s{2,}/', '', $newItem);
-    return $newItem;
+    $newItem['name'] = preg_replace('/[^a-z]/i', ' ', $newItem['name']);
+    $newItem['name'] = preg_replace('/\s{2,}/', '', $newItem['name']);
+
+    $sanitisedItem = $newItem;
+    return $sanitisedItem;
 }
 
 
@@ -77,7 +79,6 @@ function sanitiseInput(array $newItem): array
 function checkValidInput(array $sanitisedItem): bool
 {
     $valid = '';
-
     if (is_string($sanitisedItem['name']) === false) {
         $valid = false;
     } elseif (strlen($sanitisedItem['name']) > 255) {
