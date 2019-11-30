@@ -102,7 +102,7 @@ function checkValidInput(array $sanitisedItem): bool
  */
 function addNewItem($sanitisedItem, $db): bool
 {
-    $newItem = implode($sanitisedItem);
+    $sanitisedItem = implode($sanitisedItem);
     $query = $db->prepare('INSERT INTO `items` (`name`) VALUES (:name);');
     $query->bindParam(':name', $sanitisedItem);
     $results = $query->execute();
