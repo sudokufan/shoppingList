@@ -85,6 +85,8 @@ function checkValidInput(array $sanitisedItem): bool
         $valid = false;
     } elseif (strlen($sanitisedItem['name']) < 1) {
         $valid = false;
+    }elseif ($sanitisedItem['name'] == ' ') {
+        $valid = false;
     } else {
         $valid = true;
     }
