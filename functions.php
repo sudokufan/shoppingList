@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * connects PHP to SQL database
  *
@@ -12,6 +11,7 @@ function connectDB(): PDO
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
+
 
 /**
  * retrieves shopping list from the database
@@ -27,6 +27,7 @@ function getShoppingList(PDO $db): array
     $items = $query->fetchAll();
     return $items;
 }
+
 
 /**
  * displays shopping list items on front end
