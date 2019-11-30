@@ -52,7 +52,12 @@ function displayShoppingList(array $items): string
     return $result;
 }
 
-
+function sanitiseInput(array $newItem): array
+{
+    preg_replace('/[^a-z]/i', ' ', $newItem);
+    preg_replace('/\s{2,}/', '', $newItem);
+    return $newItem;
+}
 /**
  * checks item input is valid
  *
@@ -64,16 +69,17 @@ function checkUserInput(array $newItem)
 {
     $validItem = [];
 
+    $validItem = preg_replace('/[^a-z]/i', ' ', $newItem);
+    $validItem = preg_replace('/\s{2,}/', '', $validItem);
+
     if (is_string($newItem['name']) === false) {
         $validItem = false;
     } elseif (strlen($newItem['name']) > 255) {
         $validItem = false;
     } elseif (strlen($newItem['name']) < 1) {
         $validItem = false;
-    } else {
-        $validItem = preg_replace('/[^a-z]/i', ' ', $newItem);
-        $validItem = preg_replace('/\s{2,}/', '', $validItem);
     }
+    var_dump($validItem);
         return $validItem;
 }
 

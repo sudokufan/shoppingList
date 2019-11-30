@@ -6,6 +6,8 @@ $db = connectDB();
 
 $newItem = $_POST;
 
+$sanitisedItem = sanitiseInput($newItem);
+
 $validItem = checkUserInput($newItem);
 
 if ($validItem === false) {
