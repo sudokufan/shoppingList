@@ -61,7 +61,7 @@ function displayShoppingList(array $items): string
  */
 function sanitiseInput(array $newItem): array
 {
-    $newItem['name'] = preg_replace('/[^a-z]/i', ' ', $newItem['name']);
+    $newItem['name'] = preg_replace('/[^\w]/i', ' ', $newItem['name']);
     $newItem['name'] = preg_replace('/\s{2,}/', '', $newItem['name']);
 
     $sanitisedItem = $newItem;
