@@ -36,4 +36,17 @@ class StackTest extends TestCase
         $this->assertEquals($expected, $case);
     }
 
+    public function testFailureCheckUserInput() {
+        $expected = ($valid = false);
+        $input = [['Bananas']];
+        $case = checkUserInput($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testMalformedCheckUserInput() {
+        $input = 'Lemons';
+        $this->expectException(TypeError::class);
+        checkUserInput($input);
+    }
+
 }
