@@ -29,4 +29,11 @@ class StackTest extends TestCase
         displayShoppingList($input);
     }
 
+    public function testSuccessCheckUserInput() {
+        $expected = ($valid = true);
+        $input = ['name'=>'Bananas'];
+        $case = checkUserInput($input);
+        $this->assertEquals($expected, $case);
+    }
+
 }
