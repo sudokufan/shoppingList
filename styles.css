@@ -26,6 +26,16 @@ ul {
     font-size: 2rem;
 }
 
+form {
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+input {
+    display: block;
+    margin: 0 auto 10px;
+}
+
 .header {
     padding-bottom: 50px;
 }
