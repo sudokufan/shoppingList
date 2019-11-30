@@ -22,5 +22,8 @@ function connectDB(): PDO
  */
 function getShoppingList(PDO $db): array
 {
-    $query = $db->prepare("SELECT `name`")
+    $query = $db->prepare("SELECT `name` FROM `items`");
+    $query->execute();
+    $items = $query->fetchAll();
+    return $items;
 }

@@ -4,6 +4,8 @@ require_once('functions.php');
 
 $db = connectDB();
 
+$items = getShoppingList($db);
+
 ?>
 
 <html lang="en-GB">
