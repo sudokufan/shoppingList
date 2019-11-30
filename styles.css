@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 62.5%;
+    text-align: center;
+}
+
+body {
+    background-image: linear-gradient(#c7faf2, #62dfff);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+ul {
+    padding-left: 0px;
+    font-size: 2rem;
+}
+
+.header {
+    padding-bottom: 50px;
+}
