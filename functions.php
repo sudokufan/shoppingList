@@ -52,35 +52,36 @@ function displayShoppingList(array $items): string
     return $result;
 }
 
+
 function sanitiseInput(array $newItem): array
 {
     preg_replace('/[^a-z]/i', ' ', $newItem);
     preg_replace('/\s{2,}/', '', $newItem);
     return $newItem;
 }
+
+
 /**
  * checks item input is valid
  *
- * @param array $newItem new item sent from user form
+ * @param array $sanitisedItem new sanitised item from user form
  *
- * @return mixed $validItem validated item OR bool showing validation failed
+ * @return bool $result bool showing validation true/false
  */
-function checkValidInput(array $newItem)
+function checkValidInput(array $sanitisedItem): bool
 {
-    $validItem = [];
+    $result = '';
 
-    $validItem = preg_replace('/[^a-z]/i', ' ', $newItem);
-    $validItem = preg_replace('/\s{2,}/', '', $validItem);
-
-    if (is_string($newItem['name']) === false) {
-        $validItem = false;
-    } elseif (strlen($newItem['name']) > 255) {
-        $validItem = false;
-    } elseif (strlen($newItem['name']) < 1) {
-        $validItem = false;
+    if (is_string($sanitisedItem['name']) === false) {
+        $result = false;
+    } elseif (strlen($sanitisedItem['name']) > 255) {
+        $result = false;
+    } elseif (strlen($sanitisedItem['name']) < 1) {
+        $result = false;
+    } else {
+        $result = true;
     }
-    var_dump($validItem);
-        return $validItem;
+        return $result;
 }
 
 
