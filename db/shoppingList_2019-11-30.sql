@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.27)
 # Database: shoppingList
-# Generation Time: 2019-11-30 13:06:50 +0000
+# Generation Time: 2019-11-30 13:29:00 +0000
 # ************************************************************
 
 
@@ -27,7 +27,7 @@ DROP TABLE IF EXISTS `items`;
 
 CREATE TABLE `items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `item` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL DEFAULT '',
   `completed` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -35,7 +35,7 @@ CREATE TABLE `items` (
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 
-INSERT INTO `items` (`id`, `item`, `completed`)
+INSERT INTO `items` (`id`, `name`, `completed`)
 VALUES
 	(1,'Paprika',NULL),
 	(2,'Avocado',NULL),
