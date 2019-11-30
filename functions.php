@@ -76,18 +76,18 @@ function sanitiseInput(array $newItem): array
  */
 function checkValidInput(array $sanitisedItem): bool
 {
-    $result = '';
+    $valid = '';
 
     if (is_string($sanitisedItem['name']) === false) {
-        $result = false;
+        $valid = false;
     } elseif (strlen($sanitisedItem['name']) > 255) {
-        $result = false;
+        $valid = false;
     } elseif (strlen($sanitisedItem['name']) < 1) {
-        $result = false;
+        $valid = false;
     } else {
-        $result = true;
+        $valid = true;
     }
-        return $result;
+        return $valid;
 }
 
 
