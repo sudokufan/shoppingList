@@ -29,7 +29,7 @@ class StackTest extends TestCase
         displayShoppingList($input);
     }
 
-    public function testSuccessCheckUserInput() {
+    public function testSuccessCheckValidInput() {
         $expected = ($valid = true);
         $input = ['name'=>'Bananas'];
         $case = checkUserInput($input);

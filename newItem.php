@@ -8,7 +8,7 @@ $newItem = $_POST;
 
 $sanitisedItem = sanitiseInput($newItem);
 
-$validItem = checkUserInput($newItem);
+$validItem = checkValidInput($newItem);
 
 if ($validItem === false) {
     header('Location: index.php?error=wrongUser');

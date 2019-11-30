@@ -65,7 +65,7 @@ function sanitiseInput(array $newItem): array
  *
  * @return mixed $validItem validated item OR bool showing validation failed
  */
-function checkUserInput(array $newItem)
+function checkValidInput(array $newItem)
 {
     $validItem = [];
 
