@@ -71,9 +71,10 @@ function checkUserInput(array $newItem)
     } elseif (strlen($newItem['name']) < 1) {
         $validItem = false;
     } else {
-        $validItem = preg_replace('/[^a-z]/i', '', $newItem);
+        $validItem = preg_replace('/[^a-z]/i', ' ', $newItem);
+        $validItem = preg_replace('/\s{2,}/', '', $validItem);
     }
-    return $validItem;
+        return $validItem;
 }
 
 
