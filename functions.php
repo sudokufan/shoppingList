@@ -66,7 +66,7 @@ function checkUserInput(array $newItem): bool
 
     if (is_string($newItem['name']) === false) {
         $valid = false;
-    } elseif (strlen($newSet['name']) > 255) {
+    } elseif (strlen($newItem['name']) > 255) {
         $valid = false;
     } else {
         $valid = true;
