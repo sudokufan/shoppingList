@@ -5,16 +5,9 @@
 html {
     font-family: Helvetica, sans-serif;
     font-weight: bold;
+    text-align: center;
 }
 
 body {
     background-image: linear-gradient(#c7faf2, #62dfff);
-}
-
-h1 {
-    text-align: center;
-}
-
-h2 {
-    text-align: center;
 }
