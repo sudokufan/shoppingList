@@ -52,6 +52,29 @@ function displayShoppingList(array $items): string
     return $result;
 }
 
+
+/**
+ * checks item input is valid
+ *
+ * @param array $newItem new item sent from user form
+ *
+ * @return bool shows if input is valid
+ */
+function checkUserInput(array $newItem): bool
+{
+    $valid = "";
+
+    if (is_string($newItem['name']) === false) {
+        $valid = false;
+    } elseif (strlen($newSet['name']) > 255) {
+        $valid = false;
+    } else {
+        $valid = true;
+    }
+    return $valid;
+}
+
+
 /**
  * adds new item to shopping list database
  *
