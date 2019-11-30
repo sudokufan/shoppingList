@@ -58,22 +58,30 @@ function displayShoppingList(array $items): string
  *
  * @param array $newItem new item sent from user form
  *
- * @return bool shows if input is valid
+ * @return mixed $validItem validated item OR bool showing validation failed
  */
-function checkUserInput(array $newItem): bool
+function checkUserInput(array $newItem)
 {
-    $valid = "";
-
-    if (is_string($newItem['name']) === false) {
-        $valid = false;
-    } elseif (strlen($newItem['name']) > 255) {
-        $valid = false;
-    } elseif (strlen($newItem['name']) < 1) {
-        $valid = false;
+    $validItem = [];
+    if ($newItem != []) {
+            $validItem = preg_replace('/[^a-z]/i', '', $newItem);
+        return $validItem;
     } else {
-        $valid = true;
+        return false;
     }
-    return $valid;
+
+//    $valid = "";
+//
+//    if (is_string($newItem['name']) === false) {
+//        $valid = false;
+//    } elseif (strlen($newItem['name']) > 255) {
+//        $valid = false;
+//    } elseif (strlen($newItem['name']) < 1) {
+//        $valid = false;
+//    } else {
+//        $valid = true;
+//    }
+//    return $valid;
 }
 
 
