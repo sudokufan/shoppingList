@@ -23,4 +23,10 @@ class StackTest extends TestCase
         $this->assertEquals($expected, $case);
     }
 
+    public function testMalformedDisplayShoppingList() {
+        $input = 'Lemons';
+        $this->expectException(TypeError::class);
+        displayShoppingList($input);
+    }
+
 }
